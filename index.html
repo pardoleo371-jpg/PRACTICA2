@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cowboy Cat | El Gato Vaquero</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="1.jpeg" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <span class="hat-icon">🤠</span>
+      <div>
+        <h1 class="site-title">Cowboy Cat</h1>
+        <p class="site-sub">El Gato Vaquero del Internet</p>
+      </div>
+      <span class="burger-icon">🍔</span>
+    </div>
+  </header>
+
+  <section class="hero-card">
+    <div class="img-wrapper">
+      <img src="1.jpeg" alt="Gato Vaquero con combo de McDonald's" class="cat-img" />
+      <div class="img-badge">⭐ ICONO VIRAL</div>
+    </div>
+    <h2 class="hero-title">El gato más famoso<br/>del internet 🐱</h2>
+    <p class="hero-desc">
+      Con sombrero de vaquero y su combo de McDonald's, este gato conquistó los memes
+      de todo el mundo. Serio, imponente y con hambre — así es el <strong>Cowboy Cat</strong>.
+    </p>
+  </section>
+
+  <nav class="menu-section">
+    <h3 class="section-label">📋 Menú</h3>
+    <div class="menu-grid">
+      <button class="menu-btn btn-yellow" onclick="showInfo('historia')">
+        <span class="btn-icon">📖</span>
+        Historia
+      </button>
+      <button class="menu-btn btn-red" onclick="showInfo('combo')">
+        <span class="btn-icon">🍟</span>
+        Su Combo
+      </button>
+      <button class="menu-btn btn-brown" onclick="showInfo('galeria')">
+        <span class="btn-icon">🖼️</span>
+        Galería
+      </button>
+      <button class="menu-btn btn-green" onclick="showInfo('frases')">
+        <span class="btn-icon">💬</span>
+        Frases
+      </button>
+    </div>
+  </nav>
+
+  <div class="info-panel" id="info-panel" style="display:none;">
+    <div class="info-card" id="info-content"></div>
+  </div>
+
+  <section class="stats-section">
+    <h3 class="section-label">📊 Stats del Gato</h3>
+    <div class="stats-grid">
+      <div class="stat-chip">
+        <span class="stat-num">🤠</span>
+        <span class="stat-label">Actitud Vaquera</span>
+        <div class="stat-bar"><div class="stat-fill" style="width:98%; background:#f5a623;"></div></div>
+      </div>
+      <div class="stat-chip">
+        <span class="stat-num">🍔</span>
+        <span class="stat-label">Hambre</span>
+        <div class="stat-bar"><div class="stat-fill" style="width:100%; background:#e74c3c;"></div></div>
+      </div>
+      <div class="stat-chip">
+        <span class="stat-num">😐</span>
+        <span class="stat-label">Expresividad</span>
+        <div class="stat-bar"><div class="stat-fill" style="width:12%; background:#8e44ad;"></div></div>
+      </div>
+      <div class="stat-chip">
+        <span class="stat-num">🌟</span>
+        <span class="stat-label">Fama en Internet</span>
+        <div class="stat-bar"><div class="stat-fill" style="width:95%; background:#27ae60;"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quotes-section">
+    <h3 class="section-label">💬 Lo que dicen de él</h3>
+    <div class="quote-card">
+      <p>"No necesito hablar. Mi sombrero habla por mí."</p>
+      <span>— Cowboy Cat, probablemente</span>
+    </div>
+    <div class="quote-card">
+      <p>"¿Quién pidió las papas? Yo. Siempre yo."</p>
+      <span>— Cowboy Cat en McDonald's</span>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>🐱 Hecho con amor por <strong>LEONARDO ARIEL LUGARDO</strong></p>
+    <p class="footer-sub">Práctica 2 · Submódulo 2 · Diseño Web Responsivo</p>
+    <p class="footer-copy">© 2026 Cowboy Cat Fan Page</p>
+  </footer>
+
+  <script>
+    const infos = {
+      historia: {
+        title: "📖 Historia del Cowboy Cat",
+        text: `El <strong>Cowboy Cat</strong> (también conocido como "Polite Cat with Hat") es un meme que se viralizó en redes sociales alrededor de 2020. 
+        La imagen original muestra a un gato blanco sentado formalmente a una mesa, al que luego le añadieron un sombrero de vaquero y un combo de McDonald's. 
+        Su expresión seria y estoica lo convirtió en el perfecto representante de alguien que come tranquilamente sin importarle nada más.`
+      },
+      combo: {
+        title: "🍟 El Combo Legendario",
+        text: `El combo que sostiene el Cowboy Cat incluye:<br><br>
+        🍔 <strong>Big Mac</strong> — La hamburguesa más icónica de McDonald's.<br>
+        🍟 <strong>Papas fritas grandes</strong> — En su clásico empaque rojo con la "M" dorada.<br>
+        🥤 <strong>Coca-Cola</strong> — La lata roja que completa el trio perfecto.<br><br>
+        Este combo representa la actitud del gato: <em>no importa lo que pase, él siempre tiene su combo.</em>`
+      },
+      galeria: {
+        title: "🖼️ Galería de Variantes",
+        text: `El Cowboy Cat ha tenido muchas versiones populares:<br><br>
+        🐱 <strong>Original</strong> — Gato blanco sentado educadamente.<br>
+        🤠 <strong>Con sombrero</strong> — La versión vaquera más popular.<br>
+        🍔 <strong>Con combo</strong> — La versión que usamos aquí.<br>
+        👔 <strong>Versión formal</strong> — El gato en reuniones de trabajo.<br><br>
+        Cada variante adapta al gato a una situación diferente, siempre manteniendo su inexpresiva seriedad.`
+      },
+      frases: {
+        title: "💬 Frases del Cowboy Cat",
+        text: `"Vine a comer, no a hablar."<br><br>
+        "Mi combo no se toca."<br><br>
+        "El caos a mi alrededor no me afecta cuando tengo mis papas."<br><br>
+        "Soy vaquero. Como lo que quiero."<br><br>
+        "¿Problemas? No los conozco. Solo conozco el Big Mac."<br><br>
+        <em>— Cowboy Cat, filósofo del siglo XXI</em>`
+      }
+    };
+
+    function showInfo(key) {
+      const panel = document.getElementById('info-panel');
+      const content = document.getElementById('info-content');
+      const info = infos[key];
+      content.innerHTML = `<h4>${info.title}</h4><p>${info.text}</p>`;
+      panel.style.display = 'block';
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  </script>
+
+</body>
+</html>

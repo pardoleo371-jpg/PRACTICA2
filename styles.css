@@ -1,0 +1,344 @@
+/* ============================
+   COWBOY CAT - Página Web
+   Práctica 2 · Submódulo 2
+   ============================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --yellow: #f5c518;
+  --red: #e74c3c;
+  --brown: #8b5e3c;
+  --green: #27ae60;
+  --bg: #fdf6ec;
+  --card-bg: #ffffff;
+  --text: #2c1a0e;
+  --muted: #8a7060;
+  --radius: 20px;
+  --shadow: 0 4px 20px rgba(0,0,0,0.10);
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 40px,
+    rgba(245, 197, 24, 0.05) 40px,
+    rgba(245, 197, 24, 0.05) 80px
+  );
+}
+
+/* ---- HEADER ---- */
+.header {
+  background: linear-gradient(135deg, #8b5e3c 0%, #5c3a1e 100%);
+  padding: 18px 20px 14px;
+  border-radius: 0 0 28px 28px;
+  box-shadow: 0 4px 16px rgba(92, 58, 30, 0.35);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hat-icon, .burger-icon {
+  font-size: 2rem;
+}
+
+.burger-icon {
+  margin-left: auto;
+}
+
+.site-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.7rem;
+  color: var(--yellow);
+  line-height: 1;
+  letter-spacing: 0.5px;
+}
+
+.site-sub {
+  font-size: 0.75rem;
+  color: #f0cfa0;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* ---- HERO CARD ---- */
+.hero-card {
+  margin: 22px 16px 0;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  text-align: center;
+  border: 2px solid var(--yellow);
+}
+
+.img-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.cat-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--brown);
+  box-shadow: 0 6px 24px rgba(139, 94, 60, 0.3);
+  display: block;
+  margin: 0 auto;
+}
+
+.img-badge {
+  position: absolute;
+  bottom: 6px;
+  right: -8px;
+  background: var(--yellow);
+  color: var(--text);
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 2px solid var(--brown);
+  white-space: nowrap;
+}
+
+.hero-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.5rem;
+  color: var(--brown);
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.hero-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.hero-desc strong {
+  color: var(--brown);
+}
+
+/* ---- SECTION LABEL ---- */
+.section-label {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.1rem;
+  color: var(--brown);
+  margin-bottom: 14px;
+}
+
+/* ---- MENU ---- */
+.menu-section {
+  margin: 22px 16px 0;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.menu-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 16px 10px;
+  border: none;
+  border-radius: 16px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.menu-btn:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.btn-icon {
+  font-size: 1.6rem;
+}
+
+.btn-yellow { background: linear-gradient(135deg, #f5c518, #e6a800); }
+.btn-red    { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+.btn-brown  { background: linear-gradient(135deg, #a0522d, #6b3a1f); }
+.btn-green  { background: linear-gradient(135deg, #27ae60, #1e8449); }
+
+/* ---- INFO PANEL ---- */
+.info-panel {
+  margin: 16px 16px 0;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.info-card {
+  background: #fff8ee;
+  border-radius: var(--radius);
+  padding: 18px;
+  border-left: 5px solid var(--yellow);
+  box-shadow: var(--shadow);
+}
+
+.info-card h4 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.1rem;
+  color: var(--brown);
+  margin-bottom: 10px;
+}
+
+.info-card p {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+/* ---- STATS ---- */
+.stats-section {
+  margin: 22px 16px 0;
+}
+
+.stats-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stat-chip {
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+}
+
+.stat-num {
+  font-size: 1.1rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-left: 6px;
+}
+
+.stat-bar {
+  background: #ede8e0;
+  border-radius: 10px;
+  height: 8px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.stat-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 1s ease;
+}
+
+/* ---- QUOTES ---- */
+.quotes-section {
+  margin: 22px 16px 0;
+}
+
+.quote-card {
+  background: linear-gradient(135deg, #5c3a1e, #8b5e3c);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  margin-bottom: 12px;
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+
+.quote-card p {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.quote-card span {
+  font-size: 0.75rem;
+  color: #f0cfa0;
+  font-weight: 600;
+}
+
+/* ---- FOOTER ---- */
+.footer {
+  margin: 28px 0 0;
+  background: linear-gradient(135deg, #5c3a1e, #3b220f);
+  color: #f0cfa0;
+  text-align: center;
+  padding: 28px 20px 36px;
+  border-radius: 28px 28px 0 0;
+}
+
+.footer p {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.footer strong {
+  color: var(--yellow);
+}
+
+.footer-sub {
+  font-size: 0.78rem;
+  opacity: 0.75;
+}
+
+.footer-copy {
+  font-size: 0.72rem;
+  opacity: 0.5;
+  margin-top: 10px;
+}
+
+/* ---- RESPONSIVE LAPTOP ---- */
+@media (min-width: 600px) {
+  body {
+    max-width: 480px;
+    border-left: 1px solid #e0d5c5;
+    border-right: 1px solid #e0d5c5;
+    box-shadow: 0 0 40px rgba(0,0,0,0.08);
+  }
+
+  .cat-img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .hero-title {
+    font-size: 1.7rem;
+  }
+
+  .site-title {
+    font-size: 1.9rem;
+  }
+}
